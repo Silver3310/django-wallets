@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name='django-wallet',
   packages=['wallets'],
-  version='0.1',
+  version='0.2',
   license='MIT',
-  description='Apple Wallet integration for a django a project',
+  description='Apple Wallet integration for a django project',
   author='Elivanov Alexey',
   author_email='epifanov998@mail.ru',
   url='https://github.com/Silver3310/django-wallets',
-  download_url='https://github.com/Silver3310/django-wallets/archive/v_01.tar.gz',
+  download_url='https://github.com/Silver3310/django-wallets/archive/v_02.tar.gz',
   keywords=['django', 'wallet', 'apple', 'pass'],
   install_requires=[
           'celery',
