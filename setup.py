@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
   name='django-wallets',
-  packages=['django-wallets'],
+  packages=['wallets'],
   version='0.1',
   license='MIT',
   description='Apple Wallet integration for a django a project',
