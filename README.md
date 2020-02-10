@@ -26,9 +26,9 @@ After you copied the app to your project directory, you should do the following 
 Add the app to your project settings
 ```python
 INSTALLED_APPS = [
-	...
-	'wallets',
-	...
+    ...
+    'wallets',
+    ...
  ]
 ```
 ```python
@@ -45,13 +45,13 @@ from wallets.models import PassAbstract
   
 class Pass(PassAbstract):  
 """  
-	The pass model for Apple Wallet 
+    The pass model for Apple Wallet 
 """  
-	discount_card = models.ForeignKey(  
-		DiscountCard,  
-		on_delete=models.CASCADE,  
-		verbose_name=_('Discount card')  
-	)
+discount_card = models.ForeignKey(  
+    DiscountCard,  
+    on_delete=models.CASCADE,  
+    verbose_name=_('Discount card')  
+)
 ```
 
 Add the necessary constants
@@ -62,9 +62,9 @@ WALLET_KEY_PATH = 'path-to-key-certificate-pem-file'
 WALLET_WWDR_PATH = 'path-to-wwdr-certificate-pem-file'
 WALLET_PASS_TYPE_ID = 'pass.com.you.pass.id'
 WALLET_PASS_PATH = os.path.join(
-'the-path-where-you-want-store-passes',
-'passes',
-'pass{}.pkpass'
+    'the-path-where-you-want-store-passes',
+    'passes',
+    'pass{}.pkpass'
 )
 WALLET_TEAM_IDENTIFIER = 'your-team-identifier'
 WALLET_ORGANIZATION_NAME = 'organization-name'
