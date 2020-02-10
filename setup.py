@@ -1,10 +1,21 @@
-from distutils.core import setup
+from setuptools import setup
+from os import path
+
+
+this_directory = path.abspath(path.dirname(__file__))
+
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+
 setup(
   name='django-wallet',
   packages=['wallets'],
-  version='0.2',
+  version='0.3',
   license='MIT',
   description='Apple Wallet integration for a django project',
+  long_description=long_description,
+  long_description_content_type='text/markdown',
   author='Elivanov Alexey',
   author_email='epifanov998@mail.ru',
   url='https://github.com/Silver3310/django-wallets',
