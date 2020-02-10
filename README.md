@@ -1,5 +1,5 @@
 
-# django-wallets
+# django-wallet
 
 Apple Wallet integration for a django a project
 

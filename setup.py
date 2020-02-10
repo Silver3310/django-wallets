@@ -1,6 +1,6 @@
 from distutils.core import setup
 setup(
-  name='django-wallets',
+  name='django-wallet',
   packages=['wallets'],
   version='0.1',
   license='MIT',
