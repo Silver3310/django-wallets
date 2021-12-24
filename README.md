@@ -71,7 +71,7 @@ WALLET_ORGANIZATION_NAME = 'organization-name'
 WALLET_APN_HOST = ('gateway.push.apple.com', 2195)
 WALLET_ANDROID_HOST = 'https://push.walletunion.com/send'
 WALLET_ANDROID_API_KEY = 'get-it-in-the-official-site'
-WALLET_PASSWORD = 'certificate-key-passowrd'
+WALLET_PASSWORD = 'certificate-key-password'
 WALLET_ENABLE_NOTIFICATIONS = False  # True if you want to send notifications (Celery needed for it)
 PASS_MODEL = 'your_app.your_model'
 ```
