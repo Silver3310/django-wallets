@@ -81,6 +81,37 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+Example Usage to Create a pass
+
+```
+#!/usr/bin/env python
+
+from wallets.lib import Pass, Barcode, StoreCard
+from django.conf import settings
+import os
+
+cardInfo = StoreCard()
+cardInfo.addPrimaryField('name', 'John Doe', 'Name') #Don't forget to use camelCase when defining the key ex: firstName instead of name
+
+organizationName = settings.WALLET_ORGANIZATION_NAME
+passTypeIdentifier = settings.WALLET_PASS_TYPE_ID 
+teamIdentifier = settings.WALLET_TEAM_IDENTIFIER
+
+passfile = Pass(cardInfo, \
+    passTypeIdentifier=passTypeIdentifier, \
+    organizationName=organizationName, \
+    teamIdentifier=teamIdentifier)
+passfile.serialNumber = '1234567' 
+passfile.barcode = Barcode(message = 'Barcode message')    
+
+# Including the icon and logo is necessary for the passbook to be valid.
+passfile.addFile('icon.png', open('images/icon.png', 'rb'))
+passfile.addFile('logo.png', open('images/logo.png', 'rb'))
+
+# Create and output the Passbook file (.pkpass)
+passfile.create()
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
