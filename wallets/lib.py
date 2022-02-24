@@ -55,8 +55,8 @@ class Field:
         self.label = label  # Optional. Label text for the field.
         # Optional. Format string for the alert text that is displayed when
         # the pass is updated
-        self.change_message = ''
-        self.text_alignment = Alignment.LEFT
+        self.changeMessage = ''
+        self.textAlignment = Alignment.LEFT
 
     def json_dict(self):
         return self.__dict__
@@ -66,10 +66,10 @@ class DateField(Field):
 
     def __init__(self, key, value, label=''):
         super().__init__(key, value, label)
-        self.date_style = DateStyle.SHORT  # Style of date to display
-        self.time_style = DateStyle.SHORT  # Style of time to display
+        self.dateStyle = DateStyle.SHORT  # Style of date to display
+        self.timeStyle = DateStyle.SHORT  # Style of time to display
         # If true, the labels value is displayed as a relative date
-        self.is_relative = False
+        self.isRelative = False
 
     def json_dict(self):
         return self.__dict__
@@ -79,7 +79,7 @@ class NumberField(Field):
 
     def __init__(self, key, value, label=''):
         super().__init__(key, value, label)
-        self.number_style = NumberStyle.DECIMAL  # Style of date to display
+        self.numberStyle = NumberStyle.DECIMAL  # Style of date to display
 
     def json_dict(self):
         return self.__dict__
@@ -89,7 +89,7 @@ class CurrencyField(Field):
 
     def __init__(self, key, value, label='', currency_code=''):
         super().__init__(key, value, label)
-        self.currency_code = currency_code  # ISO 4217 currency code
+        self.currencyCode = currency_code  # ISO 4217 currency code
 
     def json_dict(self):
         return self.__dict__
@@ -108,7 +108,7 @@ class Barcode:
         # Required. Message or payload to be displayed as a barcode
         self.message = message
         # Required. Text encoding that is used to convert the message
-        self.message_encoding = 'iso-8859-1'
+        self.messageEncoding = 'iso-8859-1'
         self.altText = alt_text  # Optional. Text displayed near the barcode
 
     def json_dict(self):
@@ -137,7 +137,7 @@ class Location:
         self.distance = None
         # Optional. Text displayed on the lock screen when
         # the pass is currently near the location
-        self.relevant_text = ''
+        self.relevantText = ''
 
     def json_dict(self):
         return self.__dict__
@@ -146,7 +146,7 @@ class Location:
 class IBeacon(object):
     def __init__(self, proximity_uuid, major, minor):
         # IBeacon data
-        self.proximity_uuid = proximity_uuid
+        self.proximityUuid = proximity_uuid
         self.major = major
         self.minor = minor
 
@@ -185,25 +185,25 @@ class PassInformation:
         d = {}
         if self.header_fields:
             d.update({
-                'header_fields': [f.json_dict() for f in self.header_fields]
+                'headerFields': [f.json_dict() for f in self.header_fields]
             })
         if self.primary_fields:
             d.update({
-                'primary_fields': [f.json_dict() for f in self.primary_fields]
+                'primaryFields': [f.json_dict() for f in self.primary_fields]
             })
         if self.secondary_fields:
             d.update({
-                'secondary_fields': [
+                'secondaryFields': [
                     f.json_dict() for f in self.secondary_fields
                 ]
             })
         if self.back_fields:
             d.update({
-                'back_fields': [f.json_dict() for f in self.back_fields]
+                'backFields': [f.json_dict() for f in self.back_fields]
             })
         if self.auxiliary_fields:
             d.update({
-                'auxiliary_fields': [
+                'auxiliaryFields': [
                     f.json_dict() for f in self.auxiliary_fields
                 ]
             })
